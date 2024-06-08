@@ -1,31 +1,47 @@
 import requests
 import xml.etree.ElementTree as ET
 from flask import Flask, send_file
+import os
 
 # Function to fetch RSS feed
 def fetch_rss_feed(url):
-    response = requests.get(url)
-    return response.text
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching RSS feed: {e}")
+        return None
 
 # Function to parse RSS feed
 def parse_rss_feed(xml_data):
-    root = ET.fromstring(xml_data)
-    items = []
-    for item in root.findall('.//item'):
-        title = item.find('title').text
-        link = item.find('link').text
-        description = item.find('description').text
-        pub_date = item.find('pubDate').text
-        items.append({
-            'title': title,
-            'link': link,
-            'description': description,
-            'pub_date': pub_date
-        })
-    return items
+    if not xml_data:
+        print("No XML data to parse.")
+        return []
+    try:
+        root = ET.fromstring(xml_data)
+        items = []
+        for item in root.findall('.//item'):
+            title = item.find('title').text if item.find('title') is not None else 'No title'
+            link = item.find('link').text if item.find('link') is not None else '#'
+            description = item.find('description').text if item.find('description') is not None else 'No description'
+            pub_date = item.find('pubDate').text if item.find('pubDate') is not None else 'No date'
+            media = item.find('{http://search.yahoo.com/mrss/}content')
+            media_url = media.attrib['url'] if media is not None else ''
+            items.append({
+                'title': title,
+                'link': link,
+                'description': description,
+                'pub_date': pub_date,
+                'media_url': media_url
+            })
+        return items
+    except ET.ParseError as e:
+        print(f"Error parsing XML data: {e}")
+        return []
 
 # Function to generate HTML file
-def generate_html(items, css_file='style.css'):
+def generate_html(items, css_file='static/style.css'):
     html_content = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -45,6 +61,9 @@ def generate_html(items, css_file='style.css'):
             <h2><a href="{item['link']}">{item['title']}</a></h2>
             <p>{item['description']}</p>
             <span>{item['pub_date']}</span>
+            <div class="media">
+                {'<img src="' + item['media_url'] + '" alt="Media content">' if item['media_url'] else ''}
+            </div>
         </div>
         """
     html_content += """
@@ -52,6 +71,7 @@ def generate_html(items, css_file='style.css'):
     </body>
     </html>
     """
+    os.makedirs('templates', exist_ok=True)
     with open('templates/index.html', 'w') as file:
         file.write(html_content)
 
@@ -89,9 +109,15 @@ h1 {
     font-size: 12px;
     color: #999;
 }
+
+.media img {
+    max-width: 100%;
+    height: auto;
+}
 """
 
 # Save CSS content to file
+os.makedirs('static', exist_ok=True)
 with open('static/style.css', 'w') as file:
     file.write(css_content)
 
@@ -103,7 +129,7 @@ def home():
     return send_file('templates/index.html')
 
 if __name__ == '__main__':
-    rss_url = 'https://example.com/rss'  # Replace with actual RSS feed URL
+    rss_url = 'https://www.yahoo.com/news/rss'  # Yahoo News - Top Stories RSS feed URL
     xml_data = fetch_rss_feed(rss_url)
     items = parse_rss_feed(xml_data)
     generate_html(items)
