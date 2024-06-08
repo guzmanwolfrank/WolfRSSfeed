@@ -1,3 +1,10 @@
+6.8.2024   7:17pm 
+
 Rss feed is functioning perfectly off AWS RSS feed. 
 
-Find more rss feed urls that work 
+1. Find more rss feed urls that work !!!
+
+Got it limited to 3 items or so per feed and it seems that AWS, although listed second or last, still dominates the other urls
+and positions itself first in the feed. interesting. 
+
+2.  Schedule it so that it runs automatically on its own in the cloud.  Make the generated html post to a github repository. 
