@@ -1,9 +1,81 @@
+# First, download dataframe off Yfinance
+import yfinance as yf
+import quantstats as qs 
+import pandas as pd
+import numpy as np 
+import warnings
 import requests
 from xml.etree import ElementTree as ET
 import random
 import os
 import time
 import subprocess
+
+# Ignore all warnings
+warnings.filterwarnings("ignore")
+
+# Download data into dataframe from Yfinance on ticker = NQ=f 
+import yfinance as yf
+
+# Example: Crude Oil futures for June 2024
+futures_symbol = "NQ=F"
+data = yf.Ticker(futures_symbol)
+futures_data = data.history(period="1y")
+import yfinance as yf
+import pandas as pd
+import os
+
+# Fetch the historical data for the past year
+futures_symbol = "NQ=F"
+data = yf.Ticker(futures_symbol)
+futures_data = data.history(period="1y")
+
+# Calculate daily returns
+futures_data['Return'] = futures_data['Close'].pct_change()
+
+# Assume an initial investment of $10,000
+initial_investment = 100000
+futures_data['Balance'] = initial_investment * (1 + futures_data['Return']).cumprod()
+
+# Fill NaN values for the first row (as there's no previous day to compare for return)
+futures_data['Return'].iloc[0] = 0
+futures_data['Balance'].iloc[0] = initial_investment
+
+
+# Round all numerical values in the Balance column to two decimal places
+futures_data['Balance'] = futures_data['Balance'].round(2)
+
+# Display the dataframe with the new columns
+display(futures_data)
+
+# Define the file path
+file_path = "NQ_futures_with_balance_and_return.csv"
+
+# Save the dataframe to a CSV file
+futures_data.to_csv(file_path)
+
+# Get the absolute path of the saved file
+absolute_file_path = os.path.abspath(file_path)
+
+# Print the absolute path of the saved file
+print(f"CSV file saved to: {absolute_file_path}")
+
+
+display(futures_data)
+
+
+# Set the index to datetime for QuantStat
+returns = futures_data['Return']
+returns.index = pd.to_datetime(returns.index)
+
+# Generate and save the QuantStat HTML report
+qs.reports.html(returns, output='NQ_futures_report.html')
+
+# Get the absolute path of the saved file
+absolute_file_path = os.path.abspath('NQ_futures_report.html')
+
+# Print the absolute path of the saved file
+print(f"HTML report saved to: {absolute_file_path}")
 
 
 def fetch_rss_feed(url):
@@ -65,8 +137,10 @@ def generate_html(feed_urls, css_content):
     </head>
     <body>
         <h1>Wolfrank's Custom RSS Feed Aggregator</h1>
+
         <div class="feed-container">
-    """
+
+"""
 
     for url in feed_urls:
         xml_data = fetch_rss_feed(url)
