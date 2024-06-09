@@ -1,3 +1,109 @@
+#pivots
+
+import yfinance as yf
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+import os
+import requests 
+
+
+# Get user input for the stock ticker
+ticker = 'NQ=F'
+
+# Download data for the last 30 days with daily intervals
+ndata = yf.download(ticker, period="30d", interval="1d")
+
+# Extract high, low, close, and open prices and round them to 2 decimal places
+high = ndata['High'].round(2)
+low = ndata['Low'].round(2)
+close = ndata['Close'].round(2)
+open_price = ndata['Open'].round(2)
+
+# Calculate the pivot point and support/resistance levels
+pivot_point = (high + low + close) / 3
+support1 = (2 * pivot_point) - high
+support2 = pivot_point - (high - low)
+support3 = low - 2 * (high - pivot_point)
+resistance1 = (2 * pivot_point) - low
+resistance2 = pivot_point + (high - low)
+resistance3 = high + 2 * (pivot_point - low)
+
+# Create a DataFrame with the calculated values
+pivot_data = pd.DataFrame({
+    'High': high,
+    'Low': low,
+    'Close': close,
+    'Open': open_price,
+    'R3': resistance3,
+    'R2': resistance2,
+    'R1': resistance1,
+    'Pivot_Point': pivot_point,
+    'S1': support1,
+    'S2': support2,
+    'S3': support3,
+}).round(2)
+
+# Exclude the last row for plotting
+df_except_last_row = pivot_data.iloc[:-1]
+
+# Print the last row of pivot data
+print(f"Last Row of Pivot Data for {ticker}:")
+print(df_except_last_row.iloc[-1])
+print()
+
+# Plotting
+plt.figure(figsize=(10, 6))
+sns.lineplot(data=df_except_last_row[['Close', 'R3', 'R2', 'R1', 'Pivot_Point', 'S1', 'S2', 'S3']])
+plt.title(f'{ticker} Price and Pivot Points')
+plt.xlabel('Date')
+plt.ylabel('Price')
+
+# Rotate y-axis labels by 90 degrees
+plt.xticks(rotation=90)
+
+# Save the plot image
+plot_filename = f"{ticker}_pivot_plot.png"
+plt.savefig(plot_filename, bbox_inches='tight')
+
+# Display the plot
+plt.show()
+
+# HTML generation (embedded with the results)
+html_content = f"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>{ticker} Pivot Points</title>
+</head>
+<style>
+body 
+</style>
+<body>
+    <h1>{ticker} Pivot Points</h1>
+    
+    <h2>Latest NQ Floor Pivot Data</h2>
+    <pre>{df_except_last_row.iloc[-1]}</pre>
+    
+    <h2>Plot</h2>
+    <img src="{plot_filename}" alt="{ticker} Pivot Plot" width="800">
+</body>
+</html>
+"""
+
+# Define the file path to save the HTML file
+file_path = os.path.join(os.getcwd(), f"{ticker}_pivot_points.html")
+
+# Save the HTML content to a file
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+# Print the path where the HTML file was saved
+print(f"HTML file saved successfully: {file_path}")
+
 import yfinance as yf
 import quantstats as qs
 import pandas as pd
@@ -103,6 +209,8 @@ def generate_html(feed_urls, css_content):
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
         {css_content}
+
+        
         </style>
         <title>Wolfrank's Nasdaq Trading Tools + RSS Feed</title>
     </head>
@@ -112,17 +220,16 @@ def generate_html(feed_urls, css_content):
         <h1>Wolfrank's Nasdaq Trading Tools + RSS Feed</h1>
         
         
-
-        <div class="feed-container">
         
           <div class="feed-container"> 
         <h3>
-    The objective of this page is to convey data regarding Nasdaq 100 Futures. The data includes returns on the index, pivot points and other statistics along with a RSS feed. 
+   This site includes returns on the index, pivot points and other statistics along with a RSS feed. 
         </h3>
         </div>
-        
+           <div class="feed-container"> 
         <h2>Emini Nasdaq 100 Futures Index Returns<h2>
-            <!-- Embed QuantStat report -->
+            <!-- Embed QuantStat & Pivot Points report -->
+            <object type="text/html" data="NQ=F_pivot_points.html" width="100%" height="900"></object>
             <object type="text/html" data="NQ_futures_report.html" width="100%" height="1200"></object>
     """
 
@@ -226,3 +333,4 @@ def job():
 
 # Run the job
 job()
+
