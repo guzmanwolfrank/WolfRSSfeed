@@ -1,0 +1,38 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.rss-feed {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.rss-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.rss-item h2 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.rss-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.rss-item span {
+    font-size: 12px;
+    color: #999;
+}
+
+.media img {
+    max-width: 100%;
+    height: auto;
+}
