@@ -124,7 +124,8 @@ def job():
     feed_urls = [
         "https://www.cnbc.com/id/100003114/device/rss/rss.html",
         "https://aws.amazon.com/blogs/aws/feed",
-        "https://cr-news-api-service.prd.crunchyrollsvc.com/v1/en-US/rss"
+        "https://cr-news-api-service.prd.crunchyrollsvc.com/v1/en-US/rss",
+        "https://www.dailyforex.com/rss/forexnews.xml"
     ]
     
     css_content = """
