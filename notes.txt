@@ -12,4 +12,5 @@ done!  I added it to the startup file on my windows os, avoiding cloud costs!  l
 
 
 3.  add a godaddy domain to this program so that it publishes to github and then publishes to godaddy. 
+Adding wolfranktrading.com 
 
