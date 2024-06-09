@@ -13,4 +13,14 @@ done!  I added it to the startup file on my windows os, avoiding cloud costs!  l
 
 3.  add a godaddy domain to this program so that it publishes to github and then publishes to godaddy. 
 Adding wolfranktrading.com 
+done! 
 
+4.  See about adding a chart to the top of the feed, along with a streaming ticker, embed a nq futures chart, pivots, daily range etc. ! 
+
+add a quanstat printout of returns on nq= f !!!!! 
+
+find more working rss feeds. dailyforex didnt work. 
+
+5.  make sure the project pushes to git etc. properly!  
+
+6. work on css, add images, layout features and spacing, make the page more attractive. 
