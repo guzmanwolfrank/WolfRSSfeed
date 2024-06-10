@@ -9,50 +9,87 @@
     body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
+        margin: 20px;
     }
-
-    h1 {
-        text-align: center;
-    }
-
     .feed-container {
-        width: 80%;
-        margin: 0 auto;
+        margin-bottom: 20px;
+        width: 90%;
     }
-
     .feed-item {
-        border-bottom: 1px solid #ccc;
-        padding: 10px 0;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
     }
+    .feed-item h3 {
+        margin: 0 0 10px 0;
+    }
+    .feed-item p {
+        margin: 0 0 10px 0;
+    }
+   /* Navbar styling */
+.navbar {
+    width: 100%;
+    background-color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+}
 
-    .feed-item h3 a {
-        text-decoration: none;
-        color: #000;
-    }
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #00000;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
     
-
-        
         </style>
         <title>Wolfrank's Nasdaq Trading Tools + RSS Feed</title>
     </head>
     <body>
-    
-      
-        <h1>Wolfrank's Nasdaq Trading Tools + RSS Feed</h1>
-        
-        
-        
-          <div class="feed-container"> 
-        <h3>
-   This site includes returns on the index, pivot points and other statistics along with a RSS feed. 
-        </h3>
+     <nav class="navbar">
+        <div class="logo">
+            <img src="nqlogo.png" alt="Logo">
         </div>
-           <div class="feed-container"> 
-        <h2>Emini Nasdaq 100 Futures Index Returns<h2>
-            <!-- Embed QuantStat & Pivot Points report -->
-            <object type="text/html" data="NQ=F_pivot_points.html" width="100%" height="900"></object>
-            <object type="text/html" data="NQ_futures_report.html" width="100%" height="1200"></object>
+      
+    </nav>
+        <h3> Wolfrank's Nasdaq Trading Tools + RSS Feed </h3>
+        <hr>
+          <div class="feed-container"> 
+        <h4>This site includes returns on the index, pivot points and other statistics along with a RSS feed.</h4>
+        </div>
+        
+        <div class="feed-container"> 
+        <object type="text/html" data="NQ=F_pivot_points.html" width="100%" height="1000"></object>
+        <object type="text/html" data="NQ_futures_report.html" width="100%" height="3900"></object>
+ 
     
+                    <div class="feed-item">
+                        <h3><a href="https://www.cnbc.com/2024/06/10/gold-miners-struggle-with-excavating-more-says-world-gold-council.html" target="_blank">Gold is getting harder to find as miners struggle to excavate more, World Gold Council says</a></h3>
+                        <p>The gold mining industry is struggling to sustain production growth as deposits of the yellow metal become harder to find, said the World Gold Council.</p>
+                        <span>Mon, 10 Jun 2024 01:28:28 GMT</span>
+                        
+                    </div>
+                    
                     <div class="feed-item">
                         <h3><a href="https://www.cnbc.com/2024/06/09/honda-may-be-americas-most-committed-ev-automaker-for-the-moment.html" target="_blank">With EVs, Honda may be North America's most committed automaker, for the moment</a></h3>
                         <p>Honda is ramping up EV investments as GM, Ford and others scale back, but it's as much about playing catch-up as being opportunistic in the auto market.</p>
@@ -63,35 +100,7 @@
                     <div class="feed-item">
                         <h3><a href="https://www.cnbc.com/2024/06/09/eu-elections-2024-european-parliament-results-.html" target="_blank">Far right makes strong gains in EU elections as liberals and Greens lose seats, projections show</a></h3>
                         <p>Populist, far-right parties have won record support in this year's European Parliament elections, early exit polls indicated Sunday.</p>
-                        <span>Sun, 09 Jun 2024 21:44:35 GMT</span>
-                        
-                    </div>
-                    
-                    <div class="feed-item">
-                        <h3><a href="https://www.cnbc.com/2024/06/09/french-president-macron-calls-for-snap-election-after-heavy-defeat-in-eu-vote-.html" target="_blank">France's Macron calls for snap election after losing big to the far right in EU vote</a></h3>
-                        <p>Marine Le Pen's far-right National Rally is set to win around 31.5% of the vote, compared to 15.2% for Emmanuel Macron's Renaissance party, according to exit polls.</p>
-                        <span>Sun, 09 Jun 2024 21:16:32 GMT</span>
-                        
-                    </div>
-                    
-                    <div class="feed-item">
-                        <h3><a href="https://aws.amazon.com/blogs/aws/simplify-risk-and-compliance-assessments-with-the-new-common-control-library-in-aws-audit-manager/" target="_blank">Simplify risk and compliance assessments with the new common control library in AWS Audit Manager</a></h3>
-                        <p>Map enterprise controls to AWS data sources effortlessly with predefined, pre-mapped controls based on auditor reviews. Automatically inherit improvements as Audit Manager updates.</p>
-                        <span>Thu, 06 Jun 2024 18:59:12 +0000</span>
-                        
-                    </div>
-                    
-                    <div class="feed-item">
-                        <h3><a href="https://aws.amazon.com/blogs/aws/our-brand-new-cohort-of-aws-heroes-has-arrived-june-2024/" target="_blank">Our brand-new cohort of AWS Heroes has arrived – June 2024</a></h3>
-                        <p>The vibrant AWS community is made up of millions of builders worldwide. Within this global audience, there are technical enthusiasts who are going above and beyond to solve problems and generously share their learnings and best practices to empower others—the AWS Heroes. These inspirational leaders make significant contributions, and the AWS Heroes program is our […]</p>
-                        <span>Wed, 05 Jun 2024 17:01:57 +0000</span>
-                        
-                    </div>
-                    
-                    <div class="feed-item">
-                        <h3><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-amazon-ec2-u7i-instances-bedrock-converse-api-aws-world-ipv6-day-and-more-june-3-2024/" target="_blank">AWS Weekly Roundup: Amazon EC2 U7i Instances, Bedrock Converse API, AWS World IPv6 Day and more (June 3, 2024)</a></h3>
-                        <p>Life is not always happy, there are difficult times. However, we can share our joys and sufferings with those we work with. The AWS Community is no exception. Jeff Barr introduced two members of the AWS community who are dealing with health issues. Farouq Mousa is an AWS Community Builder and fighting brain cancer. Allen […]</p>
-                        <span>Mon, 03 Jun 2024 14:59:34 +0000</span>
+                        <span>Mon, 10 Jun 2024 00:14:27 GMT</span>
                         
                     </div>
                     
@@ -117,23 +126,23 @@
                     </div>
                     
                     <div class="feed-item">
-                        <h3><a href="https://crunchyroll.com/news/quizzes/2024/6/9/which-kaiju-no-8-character-are-you" target="_blank">Which Kaiju No. 8 Character Are You Most Like?</a></h3>
-                        <p>Welcome to the Anti-Kaiju Defense Force!</p>
-                        <span>Sun, 09 Jun 2024 16:00:00 GMT</span>
+                        <h3><a href="https://aws.amazon.com/blogs/aws/simplify-risk-and-compliance-assessments-with-the-new-common-control-library-in-aws-audit-manager/" target="_blank">Simplify risk and compliance assessments with the new common control library in AWS Audit Manager</a></h3>
+                        <p>Map enterprise controls to AWS data sources effortlessly with predefined, pre-mapped controls based on auditor reviews. Automatically inherit improvements as Audit Manager updates.</p>
+                        <span>Thu, 06 Jun 2024 18:59:12 +0000</span>
                         
                     </div>
                     
                     <div class="feed-item">
-                        <h3><a href="https://crunchyroll.com/news/latest/2024/6/9/too-many-losing-heroines-anime-release-date-main-visual-trailer-opening-theme-song" target="_blank">Too Many Losing Heroines! Anime Reveals Premiere Date, New Trailer and Visual</a></h3>
-                        <p>Shotaro Kitamura directs rom-com series at studio A-1 Pictures</p>
-                        <span>Sun, 09 Jun 2024 14:20:00 GMT</span>
+                        <h3><a href="https://aws.amazon.com/blogs/aws/our-brand-new-cohort-of-aws-heroes-has-arrived-june-2024/" target="_blank">Our brand-new cohort of AWS Heroes has arrived – June 2024</a></h3>
+                        <p>The vibrant AWS community is made up of millions of builders worldwide. Within this global audience, there are technical enthusiasts who are going above and beyond to solve problems and generously share their learnings and best practices to empower others—the AWS Heroes. These inspirational leaders make significant contributions, and the AWS Heroes program is our […]</p>
+                        <span>Wed, 05 Jun 2024 17:01:57 +0000</span>
                         
                     </div>
                     
                     <div class="feed-item">
-                        <h3><a href="https://crunchyroll.com/news/latest/2024/6/9/senpai-is-an-otokonoko-anime-reveals-new-trailer-and-cast-additions" target="_blank">Senpai is an Otokonoko Anime Reveals New Trailer and Cast Additions</a></h3>
-                        <p>Adaptation based on romantic comedy manga streams on Crunchyroll this summer</p>
-                        <span>Sun, 09 Jun 2024 10:15:00 GMT</span>
+                        <h3><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-amazon-ec2-u7i-instances-bedrock-converse-api-aws-world-ipv6-day-and-more-june-3-2024/" target="_blank">AWS Weekly Roundup: Amazon EC2 U7i Instances, Bedrock Converse API, AWS World IPv6 Day and more (June 3, 2024)</a></h3>
+                        <p>Life is not always happy, there are difficult times. However, we can share our joys and sufferings with those we work with. The AWS Community is no exception. Jeff Barr introduced two members of the AWS community who are dealing with health issues. Farouq Mousa is an AWS Community Builder and fighting brain cancer. Allen […]</p>
+                        <span>Mon, 03 Jun 2024 14:59:34 +0000</span>
                         
                     </div>
                     
