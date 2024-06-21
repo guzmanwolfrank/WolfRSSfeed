@@ -353,6 +353,83 @@
     .arrow:hover {color: #0078CF; }
     
 
+    .left-column {
+      background-color:#27c449;
+      color: white;
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+      float: left;
+      width: 30%;
+      height: 300px;
+      display: block;
+  }
+  .right-column {
+      background-color: white;
+      color: #555;
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+      float: right;
+      border: 1px solid grey; /* Added thin grey border */
+      width: 60%;
+      height: 300px;
+      display: block;
+  }
+  
+  .left-column h3,.right-column h3 {
+    font: Arial;
+    font-size: 24px;
+    font-style: bold;
+    font-weight: 700;
+
+  }
+
+  .left-column p, .right-column p {
+    font: Arial;
+    font-size: 18px;
+    font-style: normal;
+
+
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 20px;
+}
+
+.three-column-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding-top: 100px;
+}
+.column {
+  border: 1px solid grey;
+  padding: 20px;
+}
+.column img {
+  width: 100%;
+  
+}
+.column h1{
+  font size: 10px;
+  color: #555;
+}
+.column p{
+
+}
+
 
     
     /* -- FOOTER
@@ -694,7 +771,7 @@
          /* filter: brightness(50%);Darken the background image */
   
         background-size: cover; /* Cover the entire div */
-        background-position: left; /* Center the image */
+        background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         /* Optionally add more styles */
         display: flex;
@@ -703,7 +780,7 @@
         color: white; /* Text color */
         z-index: -1;
     }
-    }
+    
     .left-column {
       background-color:#27c449;
       color: white;
@@ -711,7 +788,7 @@
       padding: 20px;
       text-align: center;
       float: left;
-      width: 30%;
+      width: 100%;
       height: 300px;
       display: block;
   }
@@ -723,65 +800,12 @@
       text-align: center;
       float: right;
       border: 1px solid grey; /* Added thin grey border */
-      width: 60%;
+      width: 100%;
       height: 300px;
       display: block;
   }
-  
-  .left-column h3,.right-column h3 {
-    font: Arial;
-    font-size: 24px;
-    font-style: bold;
-    font-weight: 700;
-
-  }
-
-  .left-column p, .right-column p {
-    font: Arial;
-    font-size: 18px;
-    font-style: normal;
-
-
-  }
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 10px;
-}
-.grid-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 20px;
-}
-
-.three-column-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 100%;
-  padding-top: 100px;
-}
-.column {
-  border: 1px solid grey;
-  padding: 20px;
-}
-.column img {
-  width: 100%;
-  
-}
-.column h1{
-  font size: 10px;
-  color: #555;
-}
-.column p{
-
-}
-
-
+    }
+   
 
 /* -------------------------------------------------------------
     ======	END
