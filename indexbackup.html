@@ -36,7 +36,7 @@
     html, button, input, select, textarea {
       font-family: "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
       font-weight: 400; /* normal */
-      color: #000; 
+      color: #555; 
       font-smooth:always;
       -webkit-font-smoothing: antialiased;
       font-smoothing: antialiased;
@@ -215,7 +215,7 @@
     
     /* -- GRID  https://github.com/mattberridge/Proportional-Grids/
     ------------------------------------------------------------- */
-    body{width:100%; background: url(#) no-repeat 40% 0;}
+    body{width:100%; background: url(../img/stripes.png) no-repeat 40% 0;}
     .container {width: 90%; margin: 5em auto; max-width: 1100px; min-width: 300px;}
      
     .grid-wrap {
@@ -290,25 +290,13 @@
         
     /* -- HEADER
     ------------------------------------------------------------- */
-    header#navtop { margin-bottom: 2em; clear: both; overflow: hidden;
-      font-size: 14px;
-       background-color: #080808;
-       color: #fff; 
-       position: fixed;
-       padding-top: 8px;
-       width: 100%;    
-        z-index: 1;
-        top: 0;
-    }
-
-    header#navtop h2{color: #fff;padding-left: 10px;}
+    header#navtop { margin-bottom: 2em; clear: both; overflow: hidden;font-size: 18px; }
         header nav ul { display: flex;float: none; overflow: hidden; padding: 2em 3em 2em 2em; ; line-height: 0em; text-decoration: none;}
-        header nav li { float: left; margin-right: 1em; padding-right: 1em; font-size:10px; text-decoration: none;}
+        header nav li { float: left; margin-right: 1em; padding-right: 1em; font-size: 0.8em; text-decoration: none;}
         header nav li:last-child { margin-right: 0; padding-right: 0; border-right: none; }
-        header nav:hover {text-decoration: none; color: #fff}
-    nav {position: flex;}    
-    nav a, menu a { text-decoration: none; color: #fff;font-size: 20px; }
-    nav a:hover , menu a:hover{text-decoration: none; color: #fff; }
+        header nav:hover {text-decoration: none;}
+    nav a, menu a { text-decoration: none; color: #555; }
+    nav a:hover , menu a:hover{text-decoration: none;}
     .navactive { color:#}
     .logo {margin-bottom: 0em;}
     .logo:hover {background: none;}
@@ -316,35 +304,6 @@
         
     /* -- GENERAL 
     ------------------------------------------------------------- */
-    #backgroundDiv {
-      width: 100%;
-      height: 100vh; /* Full viewport height */
-      background-image: url('img/hero-bg.jpg');
-       /* filter: brightness(50%);Darken the background image */
-
-      background-size: cover; /* Cover the entire div */
-      background-position: left; /* Center the image */
-      background-repeat: no-repeat; /* Do not repeat the image */
-      /* Optionally add more styles */
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      color: white; /* Text color */
-      z-index: -1;
-  }
-    #backgroundDiv h1 {
-      color: #fff;
-      font: Arial;
-      float: left;'
-      background-position: left;
-      font-weight: 400;
-      padding-left: 40px;
-      font-size: 80px;
-
-    }
-    .shadow-text {
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
-  }
     .main > section { margin-bottom: 7em; }
     .main header{ color: #555; margin-bottom: 3em; }
     .main header hr{border-top-color:#999;}
@@ -428,8 +387,6 @@
     
     /* -- SUBPAGES 
     ------------------------------------------------------------- */
-    
-
     /*Separations*/
     .main:not(.home-page) > section article h2 { margin-top: 1em; padding-top: 1em; border-top: 1px solid #DDD; }
     .main:not(.home-page) > section article:first-child h2 { margin-top: 0;}
@@ -622,23 +579,6 @@
       nav a, menu a { text-decoration: none; color: #555; }
       nav a:hover , menu a:hover{text-decoration: none;}
       .slider { margin-top: 3em; }
-
-      #backgroundDiv {
-        width: 100%;
-        height: 100vh; /* Full viewport height */
-        background-image: url('img/hero-bg.jpg');
-         /* filter: brightness(50%);Darken the background image */
-  
-        background-size: cover; /* Cover the entire div */
-        background-position: left; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        /* Optionally add more styles */
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        color: white; /* Text color */
-        z-index: -1;
-    }
     }
         
     /* -- Media query 3 (mq3)
@@ -656,22 +596,6 @@
       
       footer li { float: none; margin-right: 0em; padding-right: 0em; border-right: none; line-height: 2em;}
       .services article {	margin-top: 3em;} .services article:first-of-type {	margin-top: 0;}	
-      #backgroundDiv {
-        width: 100%;
-        height: 100vh; /* Full viewport height */
-        background-image: url('img/hero-bg.jpg');
-         /* filter: brightness(50%);Darken the background image */
-  
-        background-size: cover; /* Cover the entire div */
-        background-position: left; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        /* Optionally add more styles */
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        color: white; /* Text color */
-        z-index: -1;
-    }
     }
     
     /* -- PRINT STYLES 
@@ -685,22 +609,6 @@
       img{max-width:100% !important}
       p, h2, h3{orphans:3; widows:3}
       h2, h3{page-break-after:avoid} 
-      #backgroundDiv {
-        width: 100%;
-        height: 100vh; /* Full viewport height */
-        background-image: url('img/hero-bg.jpg');
-         /* filter: brightness(50%);Darken the background image */
-  
-        background-size: cover; /* Cover the entire div */
-        background-position: left; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        /* Optionally add more styles */
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        color: white; /* Text color */
-        z-index: -1;
-    }
     }
      
      
@@ -718,202 +626,59 @@
 <!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
 </head>
 <body>
-  <header id="navtop"> <a href="index.html" class="logo fleft"> <h2>FUTURES CLASSES</h2></a>
+<div class="container">
+  <header id="navtop"> <a href="index.html" class="logo fleft"> <h2>Futures Classes</h2></a>
     <nav class="fright">
       <ul>
-   
+        <li><a href="index.html" class="navactive">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  <div id="backgroundDiv">
-    <h1 class="shadow-text">Start your own business,<br>Learn to trade Futures</h1>
-  </div>
-<div class="container">
-  
   <div class="home-page main">
     <section class="grid-wrap">
       <header class="grid col-full">
-       
-
+        <hr>
+        <p class="fleft">Home</p>
+        <a href="about.html" class="arrow fright">see more infos</a> </header>
       <div class="grid col-one-half mq2-col-full">
-        <h1>Learn to trade with our course, gain funding <br>
-       
-      </h1>
-        <p><h4>sdfsdfsdf Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. </p>
-        </h4>
-          
-  
-      </p>
+        <h1>Web design <br>
+          Web Development <br>
+          Graphic Design</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. </p>
+        <p>Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. </p>
       </div>
       <div class="slider grid col-one-half mq2-col-full">
         <div class="flexslider">
           <div class="slides">
             <div class="slide">
-              <figure> <img src="img/about.jpg" alt="">
-               
+              <figure> <img src="img/img2.jpg" alt="">
+                <figcaption>
+                  <div>
+                    <h5>Caption 1</h5>
+                    <p>Lorem ipsum dolor set amet, lorem, <a href="#">link text</a></p>
+                  </div>
+                </figcaption>
               </figure>
             </div>
-           
+            <div class="slide">
+              <figure> <img src="img/img.jpg" alt="">
+                <figcaption>
+                  <div>
+                    <h5>Caption 2</h5>
+                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </div>
     </section>
-   
-
-    <!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/futuresclasses-info/30min" style="min-width:320px;height:1200px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Calendly inline widget end -->
-
-    <!-- FAQ Section -->
-<section id="faq" class="faq section">
-
-  <div class="container" data-aos="fade-up">
-
-    <div class="section-title">
-      <h2>Frequently Asked Questions</h2>
-      <p class="">FAQ</p>
-
-    </div>
-
-    <div class="accordion" id="faqList">
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            What is futures trading?
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Futures trading involves buying and selling futures contracts, which are agreements to buy or sell an asset at a future date at an agreed-upon price.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            How can I get started with futures trading?
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            To get started with futures trading, you need to open an account with a brokerage that offers futures trading, deposit funds, and start trading based on your strategy and market analysis.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            What are the risks involved in futures trading?
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Futures trading carries risks such as market risk, leverage risk, and liquidity risk. It's essential to understand these risks and use risk management strategies.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            What is a futures contract?
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            A futures contract is a standardized agreement to buy or sell a specific quantity of a commodity or financial instrument at a predetermined price at a specified future date.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFive">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-            How do futures contracts differ from options contracts?
-          </button>
-        </h2>
-        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Futures contracts obligate the holder to buy or sell the underlying asset, while options contracts give the holder the right but not the obligation to buy or sell the asset at a specified price.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingSix">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-            What are the advantages of futures trading?
-          </button>
-        </h2>
-        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Futures trading offers advantages such as high liquidity, leverage, and the ability to hedge against price movements in the underlying asset.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingSeven">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-            What is margin in futures trading?
-          </button>
-        </h2>
-        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Margin in futures trading is a good faith deposit required to open and maintain a position. It acts as collateral to cover potential losses.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingEight">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-            How do I manage risk in futures trading?
-          </button>
-        </h2>
-        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Risk management in futures trading can be achieved through strategies such as diversification, using stop-loss orders, and maintaining appropriate position sizes.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingNine">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-            What is the role of a futures broker?
-          </button>
-        </h2>
-        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            A futures broker facilitates the trading of futures contracts on behalf of clients, providing access to markets, executing orders, and offering advice and research.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTen">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-            How does technical analysis help in futures trading?
-          </button>
-        </h2>
-        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Technical analysis involves studying past market data, primarily price and volume, to forecast future price movements. It helps traders make informed decisions in futures trading.
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section><!-- /FAQ Section -->
     <section class="services grid-wrap">
       <header class="grid col-full">
         <hr>
@@ -933,7 +698,6 @@
         <aside>03</aside>
         <h5>Graphic design</h5>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
-     
       </article>
     </section>
     <section class="works grid-wrap">
