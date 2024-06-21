@@ -352,6 +352,8 @@
     header .arrow {color: #999; font-style: italic;}
     .arrow:hover {color: #0078CF; }
     
+
+
     
     /* -- FOOTER
     ------------------------------------------------------------- */
@@ -702,9 +704,71 @@
         z-index: -1;
     }
     }
-     
-     
-     
+    .left-column {
+      background-color:#27c449;
+      color: white;
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+      float: left;
+      width: 30%;
+      height: 300px;
+      display: block;
+  }
+  .right-column {
+      background-color: white;
+      color: black;
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+      float: right;
+      border: 1px solid grey; /* Added thin grey border */
+      width: 60%;
+      height: 300px;
+      display: block;
+  }
+  
+  .left-column h3,.right-column h3 {
+    font: Arial;
+    font-size: 24px;
+    font-style: bold;
+    font-weight: 700;
+
+  }
+
+  .left-column p, .right-column p {
+    font: Arial;
+    font-size: 18px;
+    font-style: normal;
+
+
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 20px;
+}
+
+.three-column-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding-top: 100px;
+}
+.column {
+  border: 1px solid grey;
+  padding: 20px;
+}
     /* -------------------------------------------------------------
     ======	END
     ------------------------------------------------------------- */</style>
@@ -746,6 +810,7 @@
   
       </p>
       </div>
+      
       <div class="slider grid col-one-half mq2-col-full">
         <div class="flexslider">
           <div class="slides">
@@ -759,222 +824,27 @@
         </div>
       </div>
     </section>
-   
-
-    <!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/futuresclasses-info/30min" style="min-width:320px;height:1200px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Calendly inline widget end -->
-
-    <!-- FAQ Section -->
-<section id="faq" class="faq section">
-
-  <div class="container" data-aos="fade-up">
-
-    <div class="section-title">
-      <h2>Frequently Asked Questions</h2>
-      <p class="">FAQ</p>
-
-    </div>
-
-    <div class="accordion" id="faqList">
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            What is futures trading?
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Futures trading involves buying and selling futures contracts, which are agreements to buy or sell an asset at a future date at an agreed-upon price.
-          </div>
+      <div class="container">
+        <div class="left-column">
+<h3>Why Choose Our Courses?  </h3>      
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis.</p> 
         </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            How can I get started with futures trading?
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            To get started with futures trading, you need to open an account with a brokerage that offers futures trading, deposit funds, and start trading based on your strategy and market analysis.
-          </div>
+        <div class="right-column">
+          <h3>Right Column Reasons</h3>
+            Right Column Content
         </div>
+
+
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            What are the risks involved in futures trading?
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Futures trading carries risks such as market risk, leverage risk, and liquidity risk. It's essential to understand these risks and use risk management strategies.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            What is a futures contract?
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            A futures contract is a standardized agreement to buy or sell a specific quantity of a commodity or financial instrument at a predetermined price at a specified future date.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFive">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-            How do futures contracts differ from options contracts?
-          </button>
-        </h2>
-        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Futures contracts obligate the holder to buy or sell the underlying asset, while options contracts give the holder the right but not the obligation to buy or sell the asset at a specified price.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingSix">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-            What are the advantages of futures trading?
-          </button>
-        </h2>
-        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Futures trading offers advantages such as high liquidity, leverage, and the ability to hedge against price movements in the underlying asset.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingSeven">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-            What is margin in futures trading?
-          </button>
-        </h2>
-        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Margin in futures trading is a good faith deposit required to open and maintain a position. It acts as collateral to cover potential losses.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingEight">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-            How do I manage risk in futures trading?
-          </button>
-        </h2>
-        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Risk management in futures trading can be achieved through strategies such as diversification, using stop-loss orders, and maintaining appropriate position sizes.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingNine">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-            What is the role of a futures broker?
-          </button>
-        </h2>
-        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            A futures broker facilitates the trading of futures contracts on behalf of clients, providing access to markets, executing orders, and offering advice and research.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTen">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-            How does technical analysis help in futures trading?
-          </button>
-        </h2>
-        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqList">
-          <div class="accordion-body">
-            Technical analysis involves studying past market data, primarily price and volume, to forecast future price movements. It helps traders make informed decisions in futures trading.
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section><!-- /FAQ Section -->
-    <section class="services grid-wrap">
-      <header class="grid col-full">
-        <hr>
-        <p class="fleft">Services</p>
-        <a href="services.html" class="arrow fright">see more services</a> </header>
-      <article class="grid col-one-third mq3-col-full">
-        <aside>01</aside>
-        <h5>Web design</h5>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
-      </article>
-      <article class="grid col-one-third mq3-col-full">
-        <aside>02</aside>
-        <h5>Web development</h5>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
-      </article>
-      <article class="grid col-one-third mq3-col-full">
-        <aside>03</aside>
-        <h5>Graphic design</h5>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
+<div class="container">
+<div class="three-column-container">
+  <div class="column">Column 1</div>
+  <div class="column">Column 2</div>
+  <div class="column">Column 3</div>
+</div>
+</div>
+<footer>
      
-      </article>
-    </section>
-    <section class="works grid-wrap">
-      <header class="grid col-full">
-        <hr>
-        <p class="fleft">Works</p>
-        <a href="works.html" class="arrow fright">see more works</a> </header>
-      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="work1.html"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
-        <figcaption> <a href="work1.html" class="arrow">Project page!</a>
-          <p>Lorem ipsum dolor set amet</p>
-        </figcaption>
-      </figure>
-      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
-        <figcaption> <a href="#" class="arrow">Project x</a>
-          <p>Lorem ipsum dolor set amet</p>
-        </figcaption>
-      </figure>
-      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
-        <figcaption> <a href="#" class="arrow">Project x</a>
-          <p>Lorem ipsum dolor set amet</p>
-        </figcaption>
-      </figure>
-      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
-        <figcaption> <a href="#" class="arrow">Project x</a>
-          <p>Lorem ipsum dolor set amet</p>
-        </figcaption>
-      </figure>
-    </section>
-  </div>
-  <!--main-->
-  <div class="divide-top">
-    <footer class="grid-wrap">
-      <ul class="grid col-one-third social">
-        <li><a href="#">RSS</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Google+</a></li>
-        <li><a href="#">Flickr</a></li>
-      </ul>
-      <div class="up grid col-one-third "> <a href="#navtop" title="Go back up">&uarr;</a> </div>
-      <nav class="grid col-one-third ">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
