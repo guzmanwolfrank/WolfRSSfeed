@@ -20,7 +20,119 @@
       CSS Tricks (css-tricks.com).
     ------------------------------------------------------------- */
     
+    #backgroundDiv {
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        background-image: url('img/hero-bg.jpg');
+         /* filter: brightness(50%);Darken the background image */
+  
+        background-size: cover; /* Cover the entire div */
+        background-position: left; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        /* Optionally add more styles */
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        color: white; /* Text color */
+        z-index: -1;
+    }
+      #backgroundDiv h1 {
+        color: #fff;
+        font: Arial;
+        float: left;'
+        background-position: left;
+        font-weight: 400;
+        padding-left: 40px;
+        font-size: 80px;
+  
+      }
+      .shadow-text {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+    }
+      .main > section { margin-bottom: 7em; }
+      .main header{ color: #555; margin-bottom: 3em; }
+      .main header hr{border-top-color:#999;}
+      .arrow:after {content:" \27F6"; /* html unicode: &#10230; */ } 
+      header .arrow {color: #999; font-style: italic;}
+      .arrow:hover {color: #0078CF; }
+      
+  
+      .left-column {
+        background-color:#27c449;
+        color: white;
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+        float: left;
+        width: 30%;
+        height: 300px;
+        display: block;
+    }
+    .right-column {
+        background-color: white;
+        color: #555;
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+        float: right;
+        border: 1px solid grey; /* Added thin grey border */
+        width: 60%;
+        height: 300px;
+        display: block;
+    }
     
+    .left-column h3,.right-column h3 {
+      font: Arial;
+      font-size: 24px;
+      font-style: bold;
+      font-weight: 700;
+  
+    }
+  
+    .left-column p, .right-column p {
+      font: Arial;
+      font-size: 18px;
+      font-style: normal;
+  
+  
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 10px;
+  }
+  .grid-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 20px;
+  }
+  
+  .three-column-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    padding-top: 100px;
+  }
+  .column {
+    border: 1px solid grey;
+    padding: 20px;
+  }
+  .column img {
+    width: 100%;
+    
+  }
+  .column h1{
+    font size: 10px;
+    color: #555;
+  }
+  .column p{
+  
+  }
     
     /* -------------------------------------------------------------
     ======	RESET
@@ -36,7 +148,7 @@
     html, button, input, select, textarea {
       font-family: "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
       font-weight: 400; /* normal */
-      color: #000; 
+      color: #555; 
       font-smooth:always;
       -webkit-font-smoothing: antialiased;
       font-smoothing: antialiased;
@@ -215,7 +327,7 @@
     
     /* -- GRID  https://github.com/mattberridge/Proportional-Grids/
     ------------------------------------------------------------- */
-    body{width:100%; background: url(#) no-repeat 40% 0;}
+    body{width:100%; background: url(../img/stripes.png) no-repeat 40% 0;}
     .container {width: 90%; margin: 5em auto; max-width: 1100px; min-width: 300px;}
      
     .grid-wrap {
@@ -291,60 +403,32 @@
     /* -- HEADER
     ------------------------------------------------------------- */
     header#navtop { margin-bottom: 2em; clear: both; overflow: hidden;
-      font-size: 14px;
-       background-color: #080808;
-       color: #fff; 
-       position: fixed;
-       padding-top: 8px;
-       width: 100%;    
-        z-index: 1;
-        top: 0;
-    }
-
-    header#navtop h2{color: #fff;padding-left: 10px;}
-        header nav ul { display: flex;float: none; overflow: hidden; padding: 2em 3em 2em 2em; ; line-height: 0em; text-decoration: none;}
-        header nav li { float: left; margin-right: 1em; padding-right: 1em; font-size:10px; text-decoration: none;}
-        header nav li:last-child { margin-right: 0; padding-right: 0; border-right: none; }
-        header nav:hover {text-decoration: none; color: #fff}
-    nav {position: flex;}    
-    nav a, menu a { text-decoration: none; color: #fff;font-size: 20px; }
-    nav a:hover , menu a:hover{text-decoration: none; color: #fff; }
-    .navactive { color:#}
-    .logo {margin-bottom: 0em;}
-    .logo:hover {background: none;}
+        font-size: 14px;
+         background-color: #080808;
+         color: #fff; 
+         position: fixed;
+         padding-top: 8px;
+         width: 100%;    
+          z-index: 1;
+          top: 0;
+      }
+  
+      header#navtop h2{color: #fff;padding-left: 10px;}
+          header nav ul { display: flex;float: none; overflow: hidden; padding: 2em 3em 2em 2em; ; line-height: 0em; text-decoration: none;}
+          header nav li { float: left; margin-right: 1em; padding-right: 1em; font-size:10px; text-decoration: none;}
+          header nav li:last-child { margin-right: 0; padding-right: 0; border-right: none; }
+          header nav:hover {text-decoration: none; color: #fff}
+      nav {position: flex;}    
+      nav a, menu a { text-decoration: none; color: #fff;font-size: 20px; }
+      nav a:hover , menu a:hover{text-decoration: none; color: #fff; }
+      .navactive { color:#}
+      .logo {margin-bottom: 0em;}
+      .logo:hover {background: none;}
+          
         
         
     /* -- GENERAL 
     ------------------------------------------------------------- */
-    #backgroundDiv {
-      width: 100%;
-      height: 100vh; /* Full viewport height */
-      background-image: url('img/hero-bg.jpg');
-       /* filter: brightness(50%);Darken the background image */
-
-      background-size: cover; /* Cover the entire div */
-      background-position: left; /* Center the image */
-      background-repeat: no-repeat; /* Do not repeat the image */
-      /* Optionally add more styles */
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      color: white; /* Text color */
-      z-index: -1;
-  }
-    #backgroundDiv h1 {
-      color: #fff;
-      font: Arial;
-      float: left;'
-      background-position: left;
-      font-weight: 400;
-      padding-left: 40px;
-      font-size: 80px;
-
-    }
-    .shadow-text {
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
-  }
     .main > section { margin-bottom: 7em; }
     .main header{ color: #555; margin-bottom: 3em; }
     .main header hr{border-top-color:#999;}
@@ -352,85 +436,6 @@
     header .arrow {color: #999; font-style: italic;}
     .arrow:hover {color: #0078CF; }
     
-
-    .left-column {
-      background-color:#27c449;
-      color: white;
-      flex: 1;
-      padding: 20px;
-      text-align: center;
-      float: left;
-      width: 30%;
-      height: 300px;
-      display: block;
-  }
-  .right-column {
-      background-color: white;
-      color: #555;
-      flex: 1;
-      padding: 20px;
-      text-align: center;
-      float: right;
-      border: 1px solid grey; /* Added thin grey border */
-      width: 60%;
-      height: 300px;
-      display: block;
-  }
-  
-  .left-column h3,.right-column h3 {
-    font: Arial;
-    font-size: 24px;
-    font-style: bold;
-    font-weight: 700;
-
-  }
-
-  .left-column p, .right-column p {
-    font: Arial;
-    font-size: 18px;
-    font-style: normal;
-
-
-  }
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 10px;
-}
-.grid-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 20px;
-}
-
-.three-column-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 100%;
-  padding-top: 100px;
-}
-.column {
-  border: 1px solid grey;
-  padding: 20px;
-}
-.column img {
-  width: 100%;
-  
-}
-.column h1{
-  font size: 10px;
-  color: #555;
-}
-.column p{
-
-}
-
-
     
     /* -- FOOTER
     ------------------------------------------------------------- */
@@ -507,8 +512,6 @@
     
     /* -- SUBPAGES 
     ------------------------------------------------------------- */
-    
-
     /*Separations*/
     .main:not(.home-page) > section article h2 { margin-top: 1em; padding-top: 1em; border-top: 1px solid #DDD; }
     .main:not(.home-page) > section article:first-child h2 { margin-top: 0;}
@@ -592,45 +595,7 @@
     
     
     /* -------------------------------------------------------------
-    ======	BLOG
-    ------------------------------------------------------------- */
-    
-    /* Article */
-    .post {margin-bottom:5em}
-    .post .entry{margin:1.5em 0;}
-    .post .entry p{overflow:auto}
-    .post .more-link {font-weight:700; color: #0078CF;}
-    .post .more-link:hover {color:#333;}
-    .meta {font-weight: normal;	color:#999; font-size:0.9em}
-    .meta a {color:#555; text-decoration:none;}
-    .meta a:hover {color:#0078CF; text-decoration:underline;}
-    
-    /* Sidebar */
-    .blog-sidebar {color: #999;}
-    .blog-sidebar h2{margin-bottom:1em; font-size:2em; color:#666;}
-    .blog-sidebar .widget{padding-bottom:2em;border-bottom: 1px solid #DDD;margin-bottom: 2em;}
-    .blog-sidebar .widget:last-child{border-bottom: none;}
-    .blog-sidebar a {font-weight: normal; color:inherit;text-decoration: none; }
-    .blog-sidebar a:hover{color:#333;}
-    .blog-sidebar li{padding-left: 1em; margin-bottom: 0.5em;  white-space: nowrap ; text-overflow: ellipsis; width: 95%; overflow: hidden; display: block;} 
-    .blog-sidebar li a:before {content: ">"; padding-right: 1em;} 
-    .blog-sidebar input {width: 90%; padding-right: 0;}
-    
-    /* Pagination */
-    ul.page-numbers{float: right;overflow:hidden; display:block;}
-    .page-numbers li {float:left;}
-    .page-numbers li a{ display:block;padding:1em;text-decoration:none; color:#777;}
-    .page-numbers li a:hover{ color:#444;}
-    .page-numbers li .current{color: #0078CF;}
-    
-    /* Comments*/
-    .section-comment header{overflow: hidden; clear: both;}
-    .comments, .leavecomment {margin-top: 3em;}
-    .comment{margin-bottom: 2em;}
-    .comment p{font-size: 0.9em; color: #777;}
-    .comment h6{margin-bottom: 0.5em;}
-    .comment form ul li { margin-bottom: 2em }
-    
+
     
     
     /* -------------------------------------------------------------
@@ -701,23 +666,6 @@
       nav a, menu a { text-decoration: none; color: #555; }
       nav a:hover , menu a:hover{text-decoration: none;}
       .slider { margin-top: 3em; }
-
-      #backgroundDiv {
-        width: 100%;
-        height: 100vh; /* Full viewport height */
-        background-image: url('img/hero-bg.jpg');
-         /* filter: brightness(50%);Darken the background image */
-  
-        background-size: cover; /* Cover the entire div */
-        background-position: left; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        /* Optionally add more styles */
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        color: white; /* Text color */
-        z-index: -1;
-    }
     }
         
     /* -- Media query 3 (mq3)
@@ -735,22 +683,6 @@
       
       footer li { float: none; margin-right: 0em; padding-right: 0em; border-right: none; line-height: 2em;}
       .services article {	margin-top: 3em;} .services article:first-of-type {	margin-top: 0;}	
-      #backgroundDiv {
-        width: 100%;
-        height: 100vh; /* Full viewport height */
-        background-image: url('img/hero-bg.jpg');
-         /* filter: brightness(50%);Darken the background image */
-  
-        background-size: cover; /* Cover the entire div */
-        background-position: left; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        /* Optionally add more styles */
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        color: white; /* Text color */
-        z-index: -1;
-    }
     }
     
     /* -- PRINT STYLES 
@@ -764,53 +696,36 @@
       img{max-width:100% !important}
       p, h2, h3{orphans:3; widows:3}
       h2, h3{page-break-after:avoid} 
-      #backgroundDiv {
-        width: 100%;
-        height: 100vh; /* Full viewport height */
-        background-image: url('img/hero-bg.jpg');
-         /* filter: brightness(50%);Darken the background image */
-  
-        background-size: cover; /* Cover the entire div */
-        background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        /* Optionally add more styles */
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        color: white; /* Text color */
-        z-index: -1;
     }
-    
+@media {
     .left-column {
-      background-color:#27c449;
-      color: white;
-      flex: 1;
-      padding: 20px;
-      text-align: center;
-      float: left;
-      width: 100%;
-      height: 300px;
-      display: block;
-  }
-  .right-column {
-      background-color: white;
-      color: #555;
-      flex: 1;
-      padding: 20px;
-      text-align: center;
-      float: right;
-      border: 1px solid grey; /* Added thin grey border */
-      width: 100%;
-      height: 300px;
-      display: block;
-  }
+        background-color:#27c449;
+        color: white;
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+        float: left;
+        width: 100%;
+        height: 300px;
+        display: block;
     }
-   
+    .right-column {
+        background-color: white;
+        color: #555;
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+        float: right;
+        border: 1px solid grey; /* Added thin grey border */
+        width: 100%;
+        height: 300px;
+        display: block;
+    }
+}
+     
+</style>
 
-/* -------------------------------------------------------------
-    ======	END
-    ------------------------------------------------------------- */</style>
-<title>Designa 2.01</title>
+<title>Learn to Trade Futures</title>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width">
@@ -820,10 +735,11 @@
 <!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
 </head>
 <body>
-  <header id="navtop"> <a href="index.html" class="logo fleft"> <h2>FUTURES CLASSES</h2></a>
+     <header id="navtop"> <a href="index.html" class="logo fleft"> <h2>Futures Classes</h2></a>
     <nav class="fright">
       <ul>
-   
+ 
+  
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -831,63 +747,210 @@
   <div id="backgroundDiv">
     <h1 class="shadow-text">Start your own business,<br>Learn to trade Futures</h1>
   </div>
+
+ 
 <div class="container">
-  
+ 
   <div class="home-page main">
     <section class="grid-wrap">
       <header class="grid col-full">
-       
-
+        <hr>
+        
       <div class="grid col-one-half mq2-col-full">
-        <h1>Learn to trade with our course, gain funding <br>
-       
+        <h1>LEARN TO TRADE WITH OUR COURSE, PASS AN EVALUATION, <br>GAIN FUNDING
       </h1>
-        <p><h4>sdfsdfsdf Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. </p>
-        </h4>
-          
-  
-      </p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. </p>
+        <p>Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. </p>
       </div>
-      
       <div class="slider grid col-one-half mq2-col-full">
         <div class="flexslider">
           <div class="slides">
-            <div class="slide">
-              <figure> <img src="img/about.jpg" alt="">
-               
-              </figure>
-            </div>
-           
+            <img src="img/about.jpg">
           </div>
         </div>
       </div>
     </section>
-      <div class="container">
-        <div class="left-column">
-<h3>Why Choose Our Courses?  </h3>      
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis.</p> 
-        </div>
-        <div class="right-column">
-          <h3>Right Column Reasons</h3>
-            Right Column Content
-        </div>
+    <section class="services grid-wrap">
 
+      <article class="grid col-one-third mq3-col-full">
+        <img src="img/course-1.jpg" alt="">
 
-      </div>
-<div class="container">
-<div class="three-column-container">
-  <div class="column"><h1>4 Day Digital Bootcamp</h1>Column 1</div>
-  <div class="column"><h1>Trading Desk & Chat Room</h1>Column 2</div>
-  <div class="column"><h1>1 on 1 Consultation </h1>Column 3</div>
-</div>
-</div>
+        <h4>4 Day Bootcamp</h4>
+        <h5>$2399</h5>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
+      
+    
+    
+    </article>
+      <article class="grid col-one-third mq3-col-full">
+      
+        <img src="img/course-2.jpg" alt="">
 
-<!-- Calendly inline widget begin -->
+        <h4>Trading Desk & Chat Room</h4>
+        <h5>$199/mo.</h5>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
+      </article>
+      <article class="grid col-one-third mq3-col-full">
+        <img src="img/course-3.jpg" alt="">
+
+ 
+        <h4>Private Consultation</h4>
+        <h5>$99/hour</h5>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
+      </article>
+    </section>
+    <!-- Calendly inline widget begin -->
 <div class="calendly-inline-widget" data-url="https://calendly.com/futuresclasses-info/30min" style="min-width:320px;height:1200px;"></div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <!-- Calendly inline widget end -->
-<footer>
-     
+    <section class="works grid-wrap">
+      <header class="grid col-full">
+        <hr>
+        <p class="fleft">Store</p>
+        <a href="works.html" class="arrow fright">see more works</a> </header>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="work1.html"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="work1.html" class="arrow">Project page!</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="work1.html"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="work1.html" class="arrow">Project page!</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure><figure class="grid col-one-quarter mq2-col-one-half"> <a href="work1.html"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="work1.html" class="arrow">Project page!</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure><figure class="grid col-one-quarter mq2-col-one-half"> <a href="work1.html"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="work1.html" class="arrow">Project page!</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+      <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+        <figcaption> <a href="#" class="arrow">Project x</a>
+          <p>Lorem ipsum dolor set amet</p>
+        </figcaption>
+      </figure>
+    </section>
+  </div>
+  <!--main-->
+  <div class="contact-page main grid-wrap">
+    <header class="grid col-full">
+      <hr>
+      <p class="fleft">Contact</p>
+    </header>
+    <aside class="grid col-one-quarter mq2-col-one-third mq3-col-full">
+      <p class="mbottom">We would love to talk to you and answer all of your questions</p>
+      <address class="mbottom">
+      <h5>DESIGNA studio </h5>
+      3615 Fake Street <br >
+      Level 5, Door 123 <br >
+      1010 WHATEVER<br >
+      <a href="#">Get directions</a>
+      </address>
+      <p class="mbottom"> 00 77 66 55 33<br >
+        00 77 66 55 33</p>
+      <p class="mbottom"> <a href="#">address@email.com</a><br >
+        <a href="#">Designa Studio on Facebook</a><br >
+        <a href="#">@designstudio on Twitter</a><br >
+        <a href="#">Designa Studio on Google+</a> </p>
+      <p>
+      <h6>Openning hours: </h6>
+      Monday to Friday <br >
+      09h00 to 17h00
+      <p></p>
+    </aside>
+    <section class="grid col-three-quarters mq2-col-two-thirds mq3-col-full">
+      <h2>Drop us a message</h2>
+      <p class="warning">Don't forget to put your own email address in the php file!</p>
+      <form id="contact_form" class="contact_form" action="#" method="post" name="contact_form">
+        <ul>
+          <li>
+            <label for="name">Your name:</label>
+            <input type="text" name="name" id="name" required class="required">
+          </li>
+          <li>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required placeholder="JohnDoe@gmail.com" class="required email">
+          </li>
+          <li>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" cols="100" rows="6" required  class="required"></textarea>
+          </li>
+          <li>
+            <button type="submit" id="submit" name="submit" class="button fright">Send it</button>
+          </li>
+        </ul>
+      </form>
+    </section>
+  </div>
+  <!--main-->
+  <div class="divide-top">
+    <footer class="grid-wrap">
+      <ul class="grid col-one-third social">
+        <li><a href="#">RSS</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Google+</a></li>
+        <li><a href="#">Flickr</a></li>
+      </ul>
+      <div class="up grid col-one-third "> <a href="#navtop" title="Go back up">&uarr;</a> </div>
+      <nav class="grid col-one-third ">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -903,7 +966,7 @@
 <!-- Javascript - jQuery -->
 <script src="js/jquery-1.7.2.min.js"></script>
 <!--[if (gte IE 6)&(lte IE 8)]><script src="js/selectivizr.js"></script><![endif]-->
-<script src="js/jquery.flexslider-min.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/jquery.validate.min.js"></script>
 </body>
 </html>
