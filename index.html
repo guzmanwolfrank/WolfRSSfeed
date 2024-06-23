@@ -122,7 +122,34 @@
       .column p{
       
       }
-        
+      
+      /* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center the pricing items */
+.pricing-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 10px; /* Gap between pricing items */
+  padding: 20px; /* Padding around the pricing container */
+}
+
+.pricing-item {
+  border: 1px solid #ccc; /* Border around each pricing item */
+  padding: 20px; /* Padding inside each pricing item */
+  text-align: center; /* Center align text */
+}
+
+.pricing-item img {
+  max-width: 100%; /* Ensure image fits within its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
         /* -------------------------------------------------------------
         ======	RESET
         ------------------------------------------------------------- */
@@ -780,6 +807,12 @@
             height: 300px;
             display: block;
         }
+        
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .pricing-container {
+      grid-template-columns: 1fr; /* Single column for mobile */
+  }
     }
          
     </style>
@@ -853,6 +886,36 @@
       <h2>Start Your Journey Today</h2><br> <br>
     <p>Enroll in our course to take the first step towards passing evaluations, gaining funding, and potentially transforming your financial future. Learn from the best and make informed, confident decisions in the market. Your success starts here.</p>
     </div>
+    <div class="pricing-container">
+      <div class="pricing-item">
+          <img src="image.jpg" alt="Image">
+      </div>
+      <div class="pricing-item">
+          <p>Text 1</p>
+      </div>
+      <div class="pricing-item">
+          <p>Text 2</p>
+      </div>
+      <div class="pricing-item">
+          <p>Text 3</p>
+      </div>
+      <div class="pricing-item">
+          <p>Text 4</p>
+      </div>
+      <div class="pricing-item">
+          <p>Text 5</p>
+      </div>
+      <div class="pricing-item">
+          <p>Text 6</p>
+      </div>
+      <div class="pricing-item">
+          <p>Text 7</p>
+      </div>
+      <div class="pricing-item">
+          <p>Text 8</p>
+      </div>
+  </div>
+
  
     <section class="services grid-wrap">
      
