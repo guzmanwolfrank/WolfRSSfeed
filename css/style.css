@@ -1,106 +1,84 @@
-body, html {
-    margin: 0;
-    padding: 0;
+* {
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-.navtop {
-    background-color: #000;
-    overflow: hidden;
-    padding: 10px;
-    color: #fff;
-}
-
-.navtop ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
-.navtop ul li {
-    display: inline;
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
 }
 
-.navtop ul li a {
-    display: inline-block;
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
     color: white;
-    text-align: center;
-    padding: 14px 16px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.navbar ul li {
+    margin: 10px 0;
+}
+
+.navbar ul li a {
+    color: white;
     text-decoration: none;
-}
-
-.navtop ul li a:hover {
-    background-color: #111;
-}
-
-.customdiv {
-    background-image: url('img/hero-bg.jpg'); /* Ensure the path is correct */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 20px;
-    min-height: 100vh; /* Ensure the background covers the full height */
+    display: block;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
-    border-radius: 10px; /* Rounded corners */
-}
-
-.column {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
-}
-
-.text-column {
-    flex-basis: 50%;
-}
-
-.text-column h1,
-.text-column p {
     display: block;
+    width: 90%;
+    
+}
+.customdiv{
+    background-image: url("img/hero-bg.jpg");
+    background-color: #333;
+}
+.left-column {
     width: 50%;
-    margin-bottom: 20px; /* Add spacing between block elements */
+    background-color: #f4f4f4;
+    float: left;
+    color: #333;
 }
 
-.image-column {
-    flex-basis: 50%;
-    text-align: center;
+.right-column {
+    width: 50%;
+    background-color: #e4e4e4;
+    float: right;
+    color: #333;
 }
 
-.image-column img {
-    max-width: 50%;
-    height: auto;
-}
-
-@media {
+@media (max-width: 768px) {
     .container {
         flex-direction: column;
+        margin-left: 0;
     }
 
-    .text-column, .image-column {
-        flex-basis: 100%;
-        padding: 10px;
+    .navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .left-column .right-column {
         width: 100%;
     }
-}
-
-@media (max-width: 430px)(max-width: 768px)  {
-    .navtop ul li {
-        display: block;
-    }
-
-    .navtop ul li a {
-        padding: 10px;
-    }
+    .customdiv{
+        background-image: url("/img/bg-banner.jpg");
+        background-color: #333;
 }
