@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <style>
+        /* -------------------------------------------------------------
+            - Site Name: DESIGNA Studio
+            - Version: 2.01 (August 2012)
+            - Site URI: http://sylvainlafitte.com/designa/
+            - Author: Sylvain Lafitte
+            - Author URI: http://sylvainlafitte.com
+            
+            - Resources:
+              HTML5 Boilerplate (http://html5boilerplate.com/),
+              Normalise.css (http://necolas.github.com/normalize.css/), 
+              Proportional grids by Boon (http://builtbyboon.com),
+              CSS Tricks (css-tricks.com).
+            ------------------------------------------------------------- */
+            
+        #backgroundDiv {
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            background-image: url('img/hero-bg.jpg');
+            /* filter: brightness(50%);Darken the background image */
+            background-size: cover; /* Cover the entire div */
+            background-position: left; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            /* Optionally add more styles */
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            color: white; /* Text color */
+            z-index: -1;
+        }
+        #backgroundDiv h1 {
+            color: #fff;
+            font: Arial;
+            float: left;
+            background-position: left;
+            font-weight: 400;
+            padding-left: 40px;
+            font-size: 80px;
+        }
+        .shadow-text {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+        }
+        .main > section {
+            margin-bottom: 7em;
+        }
+        .main header {
+            color: #555;
+            margin-bottom: 3em;
+        }
+        .main header hr {
+            border-top-color: #999;
+        }
+        .arrow:after {
+            content: " \27F6"; /* html unicode: &#10230; */
+        }
+        header .arrow {
+            color: #999;
+            font-style: italic;
+        }
+        .arrow:hover {
+            color: #0078CF;
+        }
+        .left-column {
+            background-color: #27c449;
+            color: white;
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            float: left;
+            width: 30%;
+            height: 300px;
+            display: block;
+        }
+        .right-column {
+            background-color: white;
+            color: #555;
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            float: right;
+            border: 1px dashed rgb(179, 179, 179); /* Added thin grey border */
+            width: 60%;
+            height: 300px;
+            display: block;
+        }
+        .left-column h3,
+        .right-column h3 {
+            font: Arial;
+            font-size: 24px;
+            font-style: bold;
+            font-weight: 700;
+        }
+        .left-column p,
+        .right-column p {
+            font: Arial;
+            font-size: 12px;
+            font-style: normal;
+            display: block;
+            text-align: left;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+        }
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+        }
+        .three-column-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+            padding-top: 100px;
+        }
+        .column {
+            border: 1px solid grey;
+            padding: 20px;
+        }
+        .column img {
+            width: 100%;
+        }
+        .column h1 {
+            font-size: 10px;
+            color: #555;
+        }
+        .column p {
+        }
+         /* -------------------------------------------------------------
+            ====== RESET
+            ------------------------------------------------------------- */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+        audio,
+        canvas,
+        video {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+        }
+        audio:not([controls]) {
+            display: none;
+        }
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        :hover,
+        :focus,
+        :active {
+            outline: none;
+        }
+        html,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+            font-weight: 400; /* normal */
+            color: #555;
+            font-smooth: always;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+        }
+        body {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        a {
+            color: #0078CF;
+            font-weight: normal;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            -moz-transition: color 0.2s ease;
+            -webkit-transition: color 0.2s ease;
+            -o-transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #000;
+            text-decoration: none;
+            background: rgba(0, 0, 0, .025);
+        }
+        ::-moz-selection {
+            background: #0078CF;
+            color: #fff;
+            text-shadow: none;
+        }
+        ::selection {
+            background: #0078CF;
+            color: #fff;
+            text-shadow: none;
+        }
+        p {
+            margin: 0 0 1em;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        a:visited {
+            opacity: 0.9;
+        }
+        a:active,
+        a:focus {
+            position: relative;
+            top: 1px;
+        }
+        abbr[title] {
+            border-bottom: 1px dotted;
+        }
+        dfn {
+            font-style: italic;
+        }
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 1em 0;
+            padding: 0;
+        }
+        pre,
+        code,
+        kbd,
+        samp {
+            font-family: monospace, monospace;
+            _font-family: 'courier new', monospace;
+            font-size: 1em;
+        }
+        q {
+            quotes: none;
+        }
+        q:before,
+        q:after {
+            content: "";
+            content: none;
+        }
+        blockquote {
+            margin: 1em 1em 1em 0;
+            padding: 1em;
+            border-left: 1px solid #DDD;
+            font-style: italic;
+            color: #999;
+        }
+        blockquote p {
+            font-size: 1.1em;
+            line-height: 2em;
+            margin-bottom: 0;
+        }
+        blockquote small {
+            display: block;
+            font-size: 1em;
+            line-height: 1.6em;
+            color: #bfbfbf;
+            text-align: right;
+        }
+        blockquote small:before {
+            content: '\2014 \00A0';
+        }
+        b,
+        strong {
+            font-weight: 700;
+        }
+        small {
+            font-size: 85%;
+            color: #999;
+        }
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+        sup {
+            top: -0.5em;
+        }
+        sub {
+            bottom: -0.25em;
+        }
+        dd {
+            margin: 0 0 0 40px;
+        }
+        dt {
+            font-weight: 700;
+        }
+        ul,
+        ol {
+            list-style: none;
+            list-style-image: none;
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            border: 0;
+            -ms-interpolation-mode: bicubic;
+            vertical-align: middle;
+        }
+        svg:not(:root) {
+            overflow: hidden;
+        }
+        figure {
+            margin: 0;
+        }
+        form {
+            margin: 0;
+        }
+        fieldset {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+        label {
+            cursor: pointer;
+        }
+        legend {
+            border: 0;
+            *margin-left: -7px;
+            padding: 0;
+            white-space: normal;
+        }
+        button,
+        input,
+        select,
+        textarea {
+            font-size: 100%;
+            margin: 0;
+            vertical-align: baseline;
+            *vertical-align: middle;
+        }
+        button,
+        input {
+            line-height: normal;
+            *overflow: visible;
+        }
+        table button,
+        table input {
+            *overflow: auto;
+        }
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            cursor: pointer;
+            -webkit-appearance: button;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            box-sizing: border-box;
+        }
+        input[type="search"] {
+            -webkit-appearance: textfield;
+            -moz-box-sizing: content-box;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+        input[type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+        textarea {
+            overflow: auto;
+            vertical-align: top;
+            resize: vertical;
+        }
+        input:invalid {
+            background-color: #f0dddd;
+        }
+        input:invalid:focus {
+            border: 1px solid #E84C3D;
+        }
+        .input {
+            font-family: "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+        }
+        input,
+        textarea,
+        select,
+        button {
+            font-family: inherit;
+        }
+        textarea {
+            padding: 4px;
+            width: 97%;
+            height: 400px;
+        }
+        input {
+            height: 30px;
+            width: 97%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        #tabContent ul li,
+        #tabContent ol li {
+            font-size: 1.2em;
+            line-height: 2.0em;
+        }
+        button,
+        input,
+        textarea,
+        select {
+            font-size: 100%;
+            margin: 0;
+            vertical-align: baseline;
+        }
+        button,
+        input {
+            line-height: normal;
+            *overflow: visible;
+        }
+        table button,
+        table input {
+            *overflow: auto;
+        }
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            cursor: pointer;
+            -webkit-appearance: button;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            box-sizing: border-box;
+        }
+        input[type="search"] {
+            -webkit-appearance: textfield;
+            -moz-box-sizing: content-box;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+        input[type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+        textarea {
+            overflow: auto;
+            vertical-align: top;
+            resize: vertical;
+        }
+        input:invalid {
+            background-color: #f0dddd;
+        }
+        input:invalid:focus {
+            border: 1px solid #E84C3D;
+        }
+        .input {
+            font-family: "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+        }
+        input,
+        textarea,
+        select,
+        button {
+            font-family: inherit;
+        }
+        textarea {
+            padding: 4px;
+            width: 97%;
+            height: 400px;
+        }
+        input {
+            height: 30px;
+            width: 97%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        #tabContent ul li,
+        #tabContent ol li {
+            font-size: 1.2em;
+            line-height: 2.0em;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #333;
+            margin: 0 0 .5em 0;
+            font-family: "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            text-rendering: optimizelegibility;
+        }
+        h1 small,
+        h2 small,
+        h3 small,
+        h4 small,
+        h5 small,
+        h6 small {
+            font-size: 60%;
+            color: #999;
+            line-height: 0;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: 3em;
+            line-height: 1.2em;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 2.6em;
+            line-height: 1.4em;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.8em;
+            line-height: 1.4em;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        h4 {
+            font-size: 1.6em;
+            line-height: 1.4em;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        h5 {
+            font-size: 1.4em;
+            line-height: 1.4em;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        h6 {
+            font-size: 1.2em;
+            line-height: 1.4em;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        body > .container {
+            max-width: 960px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .hidden {
+            display: none;
+        }
+        .invisible {
+            visibility: hidden;
+        }
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+        .clearfix:after {
+            clear: both;
+        }
+        .row:before,
+        .row:after {
+            content: " ";
+            display: table;
+        }
+        .row:after {
+            clear: both;
+        }
+        .row {
+            *zoom: 1;
+        }
+        .row + .row {
+            margin-top: 30px;
+        }
+        /* Media Queries for responsive design */
+@media only screen and (max-width: 1200px) {
+    /* Styles for screens up to 1200px wide */
+    .three-column-container {
+        grid-template-columns: 1fr 1fr; /* Change to 2 columns */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Styles for screens up to 768px wide */
+    .three-column-container {
+        grid-template-columns: 1fr; /* Change to 1 column */
+    }
+
+    #backgroundDiv h1 {
+        font-size: 50px; /* Adjust font size */
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        height: auto; /* Adjust height for better fit */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Styles for screens up to 480px wide */
+    #backgroundDiv h1 {
+        font-size: 40px; /* Adjust font size */
+    }
+
+    .left-column h3,
+    .right-column h3 {
+        font-size: 20px; /* Adjust font size */
+    }
+
+    .left-column p,
+    .right-column p {
+        font-size: 10px; /* Adjust font size */
+    }
+}
+
+
+        </style>
+        
+<title>Learn to Trade Futures</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="shortcut icon" type="image/png" href="img/favicon.png">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+</head>
+<body>
+     <header id="navtop"> <a href="index.html" class="logo fleft"> <h2>Futures Classes</h2></a>
+    <nav class="fright">
+      <ul>
+ 
+
+      </ul>
+    </nav>
+  </header>
+  <div id="backgroundDiv">
+    <h1 class="shadow-text">Start your own business,<br>Learn to trade Futures</h1>
+  </div>
+
+ 
+<div class="container">
+ 
+  <div class="home-page main">
+    <section class="grid-wrap">
+      <header class="grid col-full">
+        <hr>
+        
+      <div class="grid col-one-half mq2-col-full">
+        <h1>LEARN TO TRADE WITH OUR COURSE, PASS AN EVALUATION, <br>GAIN FUNDING
+      </h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. </p>
+        <p>Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. </p>
+      </div>
+      <div class="slider grid col-one-half mq2-col-full">
+        <div class="flexslider">
+          <div class="slides">
+            <img src="img/about.jpg">
+          </div>
+        </div>
+      </div>
+   
+        </section>
+       
+  </div>
+
+  <div class="custom-div">
+    <h2>Unlock Your Financial Future with Our Course
+    </h2>
+    <br> <br>
+    <p>Are you looking to secure funding with zero risk? Our course is designed to help you pass evaluations and gain funding without risking your own money, apart from the evaluation and performance account fees.
+      <br> <br>
+      Here's How It Works: <br> <br>
+      Pass the Evaluation: Our comprehensive course provides you with the knowledge and skills to successfully pass funding evaluations.<br> <br>
+      Secure Funding: Once you pass, you gain access to funding without putting your own capital at risk.<br>
+      Risk-Free Learning: The only fees you’ll need to cover are for the evaluation and performance account, keeping your risk minimal.<br> <br>
+      What You'll Learn:<br> <br>
+      Proven Methods: We'll teach you the strategies and techniques used by funded professionals to achieve success.<br> <br>
+      Practical Application: Apply what you learn to your own brokerage account if you choose to invest your own money.<br> <br>
+      Expert Guidance: Benefit from the experience and insights of industry professionals who have successfully navigated the funding process.<br> <br>
+      Why Choose Our Course?<br> <br>
+      Professional Insights: Learn directly from funded traders and financial experts.<br> <br>
+      Hands-On Training: Gain practical experience with real-world applications.<br> <br>
+      Comprehensive Support: Receive ongoing support and resources to help you succeed.<br> <br> <br> <br>
+      <h2>Start Your Journey Today</h2><br> <br>
+    <p>Enroll in our course to take the first step towards passing evaluations, gaining funding, and potentially transforming your financial future. Learn from the best and make informed, confident decisions in the market. Your success starts here.</p>
+    </div>
+ 
+    <section class="services grid-wrap">
+     
+
+      <article class="grid col-one-third mq3-col-full">
+        <img src="img/course-1.jpg" alt="">
+
+        <h4>4 Day Bootcamp</h4>
+        <h5>$2399</h5>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
+      
+    
+    
+    </article>
+      <article class="grid col-one-third mq3-col-full">
+      
+        <img src="img/course-2.jpg" alt="">
+
+        <h4>Trading Desk & Chat Room</h4>
+        <h5>$199/mo.</h5>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
+      </article>
+      <article class="grid col-one-third mq3-col-full">
+        <img src="img/course-3.jpg" alt="">
+
+ 
+        <h4>Private Consultation</h4>
+        <h5>$99/hour</h5>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
+      </article>
+    </section>
+
+
+  </div>
+  <!--main-->
+  <div class="container">
+  
+    
+
+      <h2>Book a free consultation!</h2>
+      <p>
+        <h4>Schedule a private one on one phone call with one of our veteran traders.  We can answer any questions you may have 
+          and get to know your trading style better. </h4>
+        <h4>If you have any other questions feel free to reach out to us via our email: info@futuresclasses.com </h4>
+      </p>
+ 
+     
+  
+  
+  </div>
+          <!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/futuresclasses-info/30min" style="min-width:320px;height:900px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+  <!--main-->
+  <div class="container">
+  <section class="works grid-wrap">
+    <header class="grid col-full">
+      <hr>
+      <p class="fleft">Store</p>
+      <a href="works.html" class="arrow fright">see more works</a> </header>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="work1.html"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="work1.html" class="arrow">Project page!</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="work1.html"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="work1.html" class="arrow">Project page!</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure><figure class="grid col-one-quarter mq2-col-one-half"> <a href="work1.html"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="work1.html" class="arrow">Project page!</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure><figure class="grid col-one-quarter mq2-col-one-half"> <a href="work1.html"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="work1.html" class="arrow">Project page!</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+    <figure class="grid col-one-quarter mq2-col-one-half"> <a href="#"> <img src="img/img.jpg" alt=""> <span class="zoom"></span> </a>
+      <figcaption> <a href="#" class="arrow">Project x</a>
+        <p>Lorem ipsum dolor set amet</p>
+      </figcaption>
+    </figure>
+  </section>
+  </div>
+  <div class="divide-top">
+    <footer class="grid-wrap">
+      <ul class="grid col-one-third social">
+        <li><a href="#">RSS</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Google+</a></li>
+        <li><a href="#">Flickr</a></li>
+      </ul>
+      <div class="up grid col-one-third "> <a href="#navtop" title="Go back up">&uarr;</a> </div>
+      <nav class="grid col-one-third ">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="works.html">Works</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+</div>
+<!-- Javascript - jQuery -->
+<script src="js/jquery-1.7.2.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 8)]><script src="js/selectivizr.js"></script><![endif]-->
+<script src="js/scripts.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+</body>
+</html>
