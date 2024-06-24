@@ -500,6 +500,47 @@
     footer li:last-child { margin-right: 0; padding-right: 0; border-right: none; }
     .up a { display: block; text-align: center; margin: 0 auto; }
     
+
+    #footer-two {
+        color:#555;
+        padding: 20px;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+        max-width: 1200px;
+        width: 100%;
+        float: left;
+    }
+    
+    .map-container iframe {
+        border: 0;
+        border-radius: 10px;
+        width: 100%;
+    }
+    
+    .image-links a {
+        margin: 0 10px;
+    }
+    
+    .image-links img {
+        border: 2px solid white;
+        border-radius: 10px;
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s;
+    }
+    
+    .image-links img:hover {
+        transform: scale(1.1);
+    }
+
+
     
     /* -- HOME-PAGE
     ------------------------------------------------------------- */
@@ -971,19 +1012,25 @@
   </section>
   </div>
   <div class="divide-top">
-    <footer class="grid-wrap">
-      <ul class="grid col-one-third social">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <div class="up grid col-one-third "> <a href="#navtop" title="Go back up">&uarr;</a> </div>
 
-    </footer>
   </div>
 </div>
+<iframe style="border:0; width: 100%; height: 300px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<footer id="footer-two">
+
+    <div class="footer-content">
+
+        <div class="image-links">
+            <a href="https://example.com/link1"><img src="img/11244080_x_twitter_elon musk_twitter new logo_icon.png" alt="Link 1"></a>
+            <a href="https://example.com/link2"><img src="img/1159683_instagram_instagram logo_icon.png"></a>
+            <a href="https://example.com/link3"><img src="img/7405573_plumpicons_facebook_simple_icon.png" alt="Link 3"></a>
+            <a href="https://example.com/link4"><img src="img/9026059_tiktok_logo_icon.png" alt="Link 4"></a>
+            <a href="https://example.com/link4"><img src="img/9004661_envelope_mail_email_letter_icon.png" alt="Link 4"></a>
+        </div>
+    </div>
+<!-- End Google Maps -->
+</footer>
 <!-- Javascript - jQuery -->
 <script src="js/jquery-1.7.2.min.js"></script>
 <!--[if (gte IE 6)&(lte IE 8)]><script src="js/selectivizr.js"></script><![endif]-->
