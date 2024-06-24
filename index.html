@@ -317,14 +317,26 @@
       font-weight: normal; }
     h2 { font-size: 2.5em; margin: 0 0 20px; letter-spacing: -0.05em; color: #555; line-height: 1; }
     h3 { font-size: 1.75em; }
-    h4 { font-size: 1.5em; }
-    h5 { font-size: 1.17em; text-transform: uppercase; margin: 0; color: #555; }
+    h4 { font-size: 1.5em; color: #000;}
+    h5 { font-size: 1.17em; text-transform: uppercase; margin: 0; color: #fff; background-color: #27c449;  display: inline;   border-radius: 10px  padding: 5px 10px; /* Adjust padding as needed */
+      ;
+      /* Change display to inline */ }
     h6 { font-size: 1em; margin-bottom: 2px; font-weight: 700; }
     
     h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#333; text-decoration: none;}
     h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover{color:#0078CF;text-decoration: underline;}
     
-    
+    .rounded-corner {
+      display: inline-block;
+      background-color:#27c449;
+      color: white;
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 15px;
+      font-size: large;
+      margin-top: 10px;
+  }
     
     /* -- GRID  https://github.com/mattberridge/Proportional-Grids/
     ------------------------------------------------------------- */
@@ -493,7 +505,7 @@
     ------------------------------------------------------------- */
     /* Services */
     .services aside { color: #999; padding-top: 1em; border-top: 1px solid #DDD;}
-    .services aside:after, .services h5:after { content: ""; display: block; height: 1px; width: 1em; background: #DDD; margin: 1em 0; }
+    .services aside:after, .services h5:after { content: ""; display: block; height: 1px; width: 1em; ; margin: 1em 0; }
     
     /* Slider */
       /* Browser Resets */
@@ -843,8 +855,8 @@
       <article class="grid col-one-third mq3-col-full">
         <img src="img/course-1.jpg" alt="">
 
-        <h4>4 Day Bootcamp</h4>
-        <h5>$2399</h5>
+              <h4 class="rounded-corner">4 Day Bootcamp</h4>
+
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
       
     
@@ -854,16 +866,14 @@
       
         <img src="img/course-2.jpg" alt="">
 
-        <h4>Trading Desk & Chat Room</h4>
-        <h5>$199/mo.</h5>
+        <h4 class="rounded-corner">Trading Desk & Chat Room</h4>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
       </article>
       <article class="grid col-one-third mq3-col-full">
         <img src="img/course-3.jpg" alt="">
 
- 
-        <h4>Private Consultation</h4>
-        <h5>$99/hour</h5>
+        <h4 class="rounded-corner">Private Consultation</h4>
+
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
       </article>
     </section>
